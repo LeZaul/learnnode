@@ -1,0 +1,9 @@
+{% extends 'partials/layout.njk' %}
+{% block content %}
+    <h1>Hello HTML</h1>
+    {% for num in [0,1,2,3,4,5] %}
+
+        <h2>Hello {{ num }}</h2>
+    
+    {% endfor %}
+{% endblock %}
