@@ -1,0 +1,8 @@
+{% extends 'partials/layout.njk' %}
+{% block content %}
+{% if name and age %}
+
+<h1>Hello {{ name }}, you are {{ age }} years old</h1>
+
+{% endif %}
+{% endblock %}
