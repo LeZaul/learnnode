@@ -1,0 +1,14 @@
+{% extends 'partials/layout.njk' %}
+{% block content %}
+    <form action="/articles" method="POST">
+        <label>
+            Title
+            <input type="text" name="title">
+        </label>
+        <label>
+            Content
+            <textarea name="body"></textarea>
+        </label>
+        <input type="submit" value="Add">
+    </form>
+{% endblock %}
