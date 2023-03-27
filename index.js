@@ -71,6 +71,21 @@ app.post('/articles', async (req, res) => {
 });
 
 
+app.get('/articles/edit', async (req, res) => {
+  const article = await db.get(`SELECT * FROM articles WHERE id=${req.query.id};`);
+  res.render('editarticle.njk', {article});
+});
+
+app.post('/articles/edit', async (req, res) => {
+  await db.run(`UPDATE articles SET title='${req.body.title}', body='${req.body.body}' WHERE id=${req.query.id}`);
+  res.redirect('/articles');
+});
+
+app.get('/articles/delete', async (req, res) => {
+  await db.run(`DELETE FROM articles WHERE id=${req.query.id}`);
+  res.redirect('/articles');
+});
+
 app.listen(port, () => {
   console.log(`Example app listening on port http://localhost:${port}`);
 });

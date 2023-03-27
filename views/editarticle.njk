@@ -1,0 +1,14 @@
+{% extends 'partials/layout.njk' %}
+{% block content %}
+    <form action="/articles/edit?id={{article.id}}" method="POST">
+        <label>
+            Title
+            <input type="text" name="title" value="{{article.title}}">
+        </label>
+        <label>
+            Content
+            <textarea name="body">{{article.body}}</textarea>
+        </label>
+        <input type="submit" value="Edit">
+    </form>
+{% endblock %}
